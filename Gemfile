@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.2.0'
 
+gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate-bootstrap'
 gem 'rails', '4.2.2'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
