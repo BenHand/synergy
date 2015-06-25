@@ -6,6 +6,9 @@ class EmployeesController < ApplicationController
   end
 
   def show
+    @employees = Employee.where(id: params[:id])
+    @locations = Employee.all.where(id: params[:id])[0]
+    @courses   = @employees[0].courses
   end
 
   def new
