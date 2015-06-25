@@ -7,9 +7,12 @@ class CoursesController < ApplicationController
     @courses = Course.paginate(:page => params[:page], :per_page => 20)
   end
 
-  # GET /courses/1
-  # GET /courses/1.json
   def show
+    @courses = Course.where(id: params[:id])
+    @locations = Location.all.where(id: @courses[0].location_id)
+    @companies = @locations[0].company.name
+    @employees = @locations[0].company.employees
+                              .paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /courses/new

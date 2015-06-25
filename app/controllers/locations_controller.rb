@@ -7,8 +7,6 @@ class LocationsController < ApplicationController
     @locations = Location.paginate(:page => params[:page], :per_page => 20)
   end
 
-  # GET /locations/1
-  # GET /locations/1.json
   def show
   end
 

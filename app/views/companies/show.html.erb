@@ -2,7 +2,10 @@
 <div class="center"><h2><%= @companies[0].name %></h2></div>
 <h3>Locations</h3>
 <%= render partial: 'shared/locations',
-            locals: { locations: @locations, paginate: true } %>
+            locals: { locations: @locations, paginate: false } %>
+<h3>Current Employees</h3>
+<%= render partial: 'shared/employees',
+            locals: { employees: @employees, paginate: true } %>
 <h3>Courses</h3>
 <%= render partial: 'shared/courses',
             locals: {   courses: @courses,   paginate: true } %>
