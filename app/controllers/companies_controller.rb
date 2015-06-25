@@ -7,7 +7,11 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @companies = Company.all.where(id: params[:id])
+    @companies = Company.where(id: params[:id])
+    @locations = Location.all.where(company_id: @companies[0].id)
+                             .paginate(:page => params[:page])
+    @courses = Company.all.where(id: params[:id])[0].courses
+                             .paginate(:page => params[:page], :per_page => 10)
   end
 
   def new

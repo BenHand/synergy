@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<%= render partial: 'shared/companies',
-            locals: { companies: @companies, paginate: false } %>
+<div class="center"><h2><%= @companies[0].name %></h2></div>
+<h3>Locations</h3>
 <%= render partial: 'shared/locations',
-            locals: { locations: @companies.locations, paginate: true } %>
+            locals: { locations: @locations, paginate: true } %>
+<h3>Courses</h3>
+<%= render partial: 'shared/courses',
+            locals: {   courses: @courses,   paginate: true } %>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

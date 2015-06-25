@@ -4,17 +4,16 @@
   5.times do
     location = company.locations.create(city: Faker::Address.city)
 
-    10.times do
-      company.employees.create(name: Faker::Name.name,
-                          hire_date: Faker::Date.between(2.years.ago, 1.day.ago),
-                              title: Faker::Name.title)
-    end
+    3.times do
+      employee = company.employees.create(name: Faker::Name.name,
+                            hire_date: Faker::Date.between(2.years.ago, 1.day.ago),
+                                title: Faker::Name.title)
+      2.times do
+        course = location.courses.create(name: Faker::Company.bs,
+                           max_count: Faker::Number.number(2))
 
-    5.times do
-      location.courses.create(name: Faker::Company.bs,
-                         max_count: Faker::Number.number(2))
+        EmployeesCourse.create(course_id: course.id, employee_id: employee.id)
+      end
     end
-
   end
-
 end
