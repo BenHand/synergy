@@ -8,6 +8,17 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @locations = Location.where(id: params[:id])
+    @courses   = @locations[0].courses.paginate(:page => params[:page], :per_page => 10)
+    @employees = @locations[0].company.employees
+                              .paginate(:page => params[:page], :per_page => 10)
+    @companies = @locations[0].company.name
+    # @companies = Company.where(id: params[:id])
+    # @locations = Location.all.where(company_id: @companies[0].id)
+    # @courses = Company.all.where(id: params[:id])[0].courses
+    #                          .paginate(:page => params[:page], :per_page => 10)
+    # @employees = Employee.all.where(company_id: @companies[0].id)
+    #                          .paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /locations/new

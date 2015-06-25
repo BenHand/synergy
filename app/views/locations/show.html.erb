@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
+<div class="center"><h2><%= @companies %></h2></div>
+<div class="center"><h2>Location: <%= @locations[0].city %></h2></div>
 
-<p>
-  <strong>City:</strong>
-  <%= @location.city %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @location.company %>
-</p>
+<h3>Courses</h3>
+<%= render partial: 'shared/courses',
+            locals: {   courses: @courses,   paginate: true } %>
+<h3>Current Employees</h3>
+<%= render partial: 'shared/employees',
+            locals: { employees: @employees, paginate: true } %>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
