@@ -9,6 +9,7 @@
 <h3>Enrolled Employees</h3>
 <%= render partial: 'shared/employees',
             locals: { employees: @employees, paginate: true } %>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<div class="center">
+  <%= link_to 'Edit', edit_course_path(@course) %> |
+  <%= link_to 'Back', courses_path %>
+</div>
