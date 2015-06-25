@@ -1,18 +1,15 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
-  # GET /companies
-  # GET /companies.json
+
   def index
     @companies = Company.paginate(:page => params[:page], :per_page => 20)
   end
 
-  # GET /companies/1
-  # GET /companies/1.json
   def show
+    @companies = Company.all.where(id: params[:id])
   end
 
-  # GET /companies/new
   def new
     @company = Company.new
   end

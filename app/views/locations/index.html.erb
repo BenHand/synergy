@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h2 class="center">Company Locations</h2>
-<%= render partial: 'shared/locations', locals: { locations: @locations } %>
+<%= render partial: 'shared/locations',
+            locals: { locations: @locations, paginate: true } %>
 <%= link_to 'New Location', new_location_path %>

@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+<%= render partial: 'shared/companies',
+            locals: { companies: @companies, paginate: false } %>
+<%= render partial: 'shared/locations',
+            locals: { locations: @companies.locations, paginate: true } %>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

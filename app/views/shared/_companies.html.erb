@@ -1,5 +1,7 @@
 <div class="center">
-  <%= will_paginate companies, renderer: BootstrapPagination::Rails %>
+  <% if paginate %>
+    <%= will_paginate companies, renderer: BootstrapPagination::Rails %>
+  <% end %>
 </div>
 <section class="panel panel-default">
   <table class="table">
@@ -23,6 +25,8 @@
   </table>
   <br>
   <div class="center">
-    <%= will_paginate companies, renderer: BootstrapPagination::Rails %>
+    <% if paginate %>
+      <%= will_paginate companies, renderer: BootstrapPagination::Rails %>
+    <% end %>
   </div>
 </section>

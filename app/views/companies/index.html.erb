@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h2 class="center">Companies</h2>
-<%= render partial: 'shared/companies', locals: { companies: @companies } %>
+<%= render partial: 'shared/companies',
+            locals: { companies: @companies, paginate: true } %>
 <%= link_to 'New Company', new_company_path, class: 'btn btn-default' %>

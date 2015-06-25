@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h2 class="center">Courses</h2>
-<%= render partial: 'shared/courses', locals: { courses: @courses } %>
+<%= render partial: 'shared/courses',
+            locals: { courses: @courses, paginate: true } %>
 <%= link_to 'New Course', new_course_path %>
