@@ -3,4 +3,6 @@
 <h2 class="center">Courses</h2>
 <%= render partial: 'shared/courses',
             locals: { courses: @courses, paginate: true } %>
-<%= link_to 'New Course', new_course_path %>
+<div class="center">
+  <%= link_to 'New Course', new_course_path, class: 'btn btn-default' %>
+</div>

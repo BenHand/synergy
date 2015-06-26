@@ -3,4 +3,6 @@
 <h2 class="center">Company Locations</h2>
 <%= render partial: 'shared/locations',
             locals: { locations: @locations, paginate: true } %>
-<%= link_to 'New Location', new_location_path %>
+<div class="center">
+  <%= link_to 'New Location', new_location_path, class: 'btn btn-default' %>
+</div>

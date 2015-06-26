@@ -3,4 +3,7 @@
 <h2 class="center">Company Employees</h2>
 <%= render partial: 'shared/employees',
             locals: { employees: @employees, paginate: true } %>
-<%= link_to 'New Employee', new_employee_path %>
+<!-- <%= react_component('Employee', { employees: @employees }) %> -->
+<div class="center">
+  <%= link_to 'New Employee', new_employee_path, class: 'btn btn-default' %>
+</div>
